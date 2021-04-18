@@ -13,7 +13,7 @@
       <div class="container">
         <h1>Science Trivia</h1>
         <h2> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h2>
-        <button id="Start-Quiz">Start Quiz</button>  
+        <button id="start">Start Quiz</button>  
         <div id="quiz" style="display: none">
             <div id="question"></div>
             <div id="choices">
@@ -30,7 +30,11 @@
                 <div class="choice" id="F" onclick="checkAnswer('F')"></div>
 
                 <div class="choice" id="G" onclick="checkAnswer('G')"></div>
-            </div>      
+            </div>
+            <div id="timer">
+
+            </div> 
+          <div id="score"></div>     
       </div>
     </div>
     

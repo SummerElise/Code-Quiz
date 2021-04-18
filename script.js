@@ -1,4 +1,4 @@
-const StartQuiz = document.getElementById("Start-Quiz");
+const start = document.getElementById("Start-Quiz");
 
 const quiz = document.getElementById("quiz");
 
@@ -20,9 +20,8 @@ const choiceC = document.getElementById("F");
 
 const choiceC = document.getElementById("G");
 
-let TIMER;
+const score = document.getElementById("score");
 
-let SCORE;
 
 
 let questions = [
@@ -132,8 +131,10 @@ let questions = [
 ];
 
 const lastQuestion = questions.length - 1;
-
 let runningQuestion = 0;
+let count = 0;
+let TIMER;
+
 
 //Rendering a question
 
@@ -142,48 +143,56 @@ function renderQuestion(){
     let q = questions[runningQuestion];
    
 
-    question.innerHTML = "<p>"+ q.question +"</p>";
-
+    question.innerHTML = "<p>"+ q.question +"</p>";    
     qImg.innerHTML = "<img src="+ q.imgSrc +">";
 
     choiceA.innerHTML = q.choiceA;
-
     choiceB.innerHTML = q.choiceB;
-
     choiceC.innerHTML = q.choiceC;
-
     choiceD.innerHTML = q.choiceD;
-
     choiceE.innerHTML = q.choiceE;
-
     choiceF.innerHTML = q.choiceF;
-
     choiceG.innerHTML = q.choiceG;
-
 }
 
-StartQuiz.addEventListener("click", StartQuiz);
+start.addEventListener("click", StartQuiz);
+
 //Start quiz
 function StartQuiz() {
-    StartQuiz.style.display = "none";
+    start.style.display = "none";
     renderQuestion();
     quiz.style.display = "block";
     TIMER = setInterval(renderCounter,)
 }
 
-StartQuiz.style.display = "none"
+start.style.display = "none"
 renderQuestion();
 quiz.style.display ="block";
 
+function renderCounter(){
+    if count
+}
+
 //Check Answer
+var incorrect = [];
+
 function checkAnswer(answer){
     if(answer == questions[runningQuestion].correct){
         //if correct answer
-        score++
-    }else{
-        //if wrong answer
+        alert('Correct!');        
+    } else {
+        //if wrong answer      
+    incorrect.push(index);
+    alert('Sorry, this is incorrect');
     }
+}   if(runningQuestion < lastQuestion){
+    runningQuestion++;
+    renderQuestion();
 }
 
+//Render Score
+function scoreRender(){
+    score.style.display = "block";
+}
 //Added EventListener
-StartQuiz.addEventListener("click", StartQuiz);
+start.addEventListener("click", StartQuiz);
