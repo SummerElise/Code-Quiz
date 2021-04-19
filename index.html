@@ -11,13 +11,13 @@
   <body>
     <header>
       <div class="large-font">Science Trivia</div>
-      <button class="start-button">Start Quiz</button> 
+      <button class="start-button" id= "start">Start Quiz</button> 
       <header>
 
     <main>
       <section>    
       <div class="card quiz-question">
-        <h2> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h2>
+        <h1> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h1>
         <div id="quiz" style="display: none">
             <div id="question"></div>
             <div id="choices">
@@ -42,26 +42,21 @@
 
           <section>
             <div class="card results">
-              <div class = "win-loss-container">
-              <div>
-              <h2>Correct: <span class="Correct">0 </span> </h2>
-              <h2>Wrong: <span class="Wrong">0</span></h2>
+              <div class = "score-container">                          
+              <button class="reset-button" id="Reset-Score">Reset Score</button>
+              <button class="view-Highscores" id= "View-Highscores">View Highscores</button>
+          
+            <div class= "card timer">
+            <div class = "timer-text">
+            <div class="timer-count">60</div>
+              <h2>seconds remaining</h2>
+            </div> 
             </div>
-              <button class="reset-button">Reset Score</button>
-              <button class="view-Highscores">View Highscores</button>
-
-          </div>
-              <div class= "card timer">
-                <div class = "timer-text">
-                <div class="large-font timer-count">60</div>
-                <h3>seconds remaining</h3>
-                </div> 
-              </div>
-          </div> 
+            </div> 
           </section>
       </main>
 
-    <script src="script.js"></script>
-    <script src="questions.js"></script>
+    <script src="./script.js"></script>
+    <script src="./questions.js"></script>
   </body>
 </html>
