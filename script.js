@@ -1,6 +1,5 @@
 //Variables
 var win = document.querySelector(".win");
-var  = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var CorrectCounter = 0;
@@ -9,7 +8,7 @@ var isWin = false;
 var timer;
 var timerCount;
 var question = document.getElementById("question");
-var answer
+var chosenAnswer ="";
 
 // The init function is called when the page loads 
 function init() {
@@ -19,11 +18,11 @@ function init() {
   
   // The startGame function is called when the start button is clicked
   function startQuiz() {    
-    titleScreen.setAttribute("class", "hide");    
-    quizScreen.setAttribute("class", "show");  
-    timerId = setInterval(tick, 1000);  
-    timeEl.textContent = time;  
-    getQuestion();
+    isWin = false;
+    timerCount = 60;
+    startButton.disabled = true;
+    renderQuestion()
+    startTimer()
   }
     
   // The GameOver function is called when timer reaches 0
@@ -57,19 +56,9 @@ function init() {
     }, 1000);
   }
 
-const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-
-//Rendering a question
-startButton.addEventListener("click", startQuiz);
-
-// start quiz
-const quiz = document.getElementById("quiz");
-function startQuiz(){
-    h2.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-    renderCounter();
+  function renderQuestion() {
+      
+  }
 
 //Check Answer
 var incorrect = [];

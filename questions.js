@@ -1,4 +1,4 @@
-var questions = [
+var question = [
     {
         question : "How many bones are in the human body?",
         imgSrc : "",
