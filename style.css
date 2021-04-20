@@ -212,7 +212,7 @@
 .timer-text {
   padding: 15px;
   position: relative; bottom: 30px;
- 
+  line-height: 30px; 
 }
 
 
