@@ -18,26 +18,28 @@
       <section>    
       <div class="card quiz-question">
         <h1> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h1>
-        <div id="#quiz" style="display: none">
-            <div id="#questions"></div>
-            <div id="#choices">
-                <div class="choice" id="#A" onclick="checkAnswer('A')"></div>
+        <div id="quiz" style="display: none">
+          <div id="questions"></div>
+              <button id="choices">
+                <button type="button" class="choice" id="A" onclick="checkAnswer('A')"></button>
 
-                <div class="choice" id="#B" onclick="checkAnswer('B')"></div>
+                <button type="button" class="choice" id="B" onclick="checkAnswer('B')"></button>
 
-                <div class="choice" id="#C" onclick="checkAnswer('C')"></div>
+                <button type="button" class="choice" id="C" onclick="checkAnswer('C')"></button>
 
-                <div class="choice" id="#D" onclick="checkAnswer('D')"></div>
+                <button type="button" class="choice" id="D" onclick="checkAnswer('D')"></button>
 
-                <div class="choice" id="#E" onclick="checkAnswer('E')"></div>
+                <button type="button" class="choice" id="E" onclick="checkAnswer('E')"></button>
 
-                <div class="choice" id="#F" onclick="checkAnswer('F')"></div>
+                <button type="button" class="choice" id="F" onclick="checkAnswer('F')"></button>
 
-                <div class="choice" id="#G" onclick="checkAnswer('G')"></div>
+                <button type="button" class="choice" id="G" onclick="checkAnswer('G')"></button>
+              </button>
+              </div>
             </div>
-            </div>
-          </div>
-          </div>
+          <form>
+            
+          </form>
         </section>
 
           <section>
@@ -56,6 +58,7 @@
           </section>
       </main>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./script.js"></script>
     <script src="./questions.js"></script>
   </body>

@@ -1,35 +1,24 @@
 //Variables
 var timerElement = document.querySelector(".timer-counter");
-var startButton = document.querySelector("#start");
+var startButtonEl = $('#start')
 var timer;
-var timerCount;
 var chosenAnswer ="";
 var score;
 var choices = document.querySelector("#choices");
 var checkAnswer = document.querySelector("check-Answer");
 
-var questions = [];
 
-
-  function init() {
-    getScore();
-  }
+  start.addEventListener("click", startQuiz)
 
   // The startGame function is called when the start button is clicked
   function startQuiz() {  
-    timerCount = 60;
-    startButton.disabled = true;
+    timerCount = 60;    
     renderQuestion()
     startTimer()
   }
     
   // The GameOver function is called when timer reaches 0
-  function QuizOver() {
-    wordBlank.textContent = "QUIZ RESULTS";    
-    startButton.disabled = false;
-    setScore()
-  }
-  
+  var timerCount = 60
   // The setTimer function starts and stops the timer and triggers winGame() and loseGame()
   function startTimer() {
     // Sets timer
@@ -67,28 +56,12 @@ var questions = [];
     );
   }
   output.push(
-    '<div class="choices">' + questions[i].question + '</div>'
-    + '<div id=("A", "B", "C", "D", "E", "F", "G")> + .join('') + '</div>'
+  
   );
 }
 // finally combine our output list into one string of html and put it on the page
 quizContainer.innerHTML = output.join('');
-}
-  function setScore() {
-    score.textContent = scoreCounter;
-    localStorage.setItem("setScore", setScore)
-  }
 
-  function getScore() {
-    var storedScores = localStorage.getItem("scoreCounter");
-    if (storedScore === null) {
-      scoreCounter = 0;
-    } else {
-      scoreCounter = storedScore;
-    }
-
-    score.textContent = storedScore;
-  }
 
   function checkAnswer(chosenChoice) {
     var 
@@ -100,7 +73,10 @@ startButton.addEventListener("click", startQuiz);
 init();
 
 // Bonus: Add reset button
-var resetButton = document.querySelector(".reset-button");
+refreshButtonEl.on('click', function () {
+  location.reload();
+});
+
 
 function resetGame() {
   // Resets win and loss counts
