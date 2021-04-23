@@ -12,43 +12,49 @@
     <header>
       <div class="large-font">Science Trivia</div>
       <button class="start-button" id= "start">Start Quiz</button> 
-      <header>
+    </header>
 
     <main>
       <section>    
       <div class="card quiz-question">
         <h1> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h1>
-        <div id="quiz" style="display: none">
-          <div id="questions"></div>
-              <button id="choices">
-                <button type="button" class="choice" id="A" onclick="checkAnswer('A')"></button>
+        <div id="quiz">
+          <div id="questions"></div>              
+                <button id="A" onclick="checkAnswer('A')">A</button>
 
-                <button type="button" class="choice" id="B" onclick="checkAnswer('B')"></button>
+                <button id="B" onclick="checkAnswer('B')">B</button>
 
-                <button type="button" class="choice" id="C" onclick="checkAnswer('C')"></button>
+                <button id="C" onclick="checkAnswer('C')">C</button>
 
-                <button type="button" class="choice" id="D" onclick="checkAnswer('D')"></button>
+                <button id="D" onclick="checkAnswer('D')">D</button>
 
-                <button type="button" class="choice" id="E" onclick="checkAnswer('E')"></button>
+                <button id="E" onclick="checkAnswer('E')">E</button>
 
-                <button type="button" class="choice" id="F" onclick="checkAnswer('F')"></button>
+                <button id="F" onclick="checkAnswer('F')">F</button>
 
-                <button type="button" class="choice" id="G" onclick="checkAnswer('G')"></button>
-              </button>
-              </div>
+                <button id="G" onclick="checkAnswer('G')">G</button>
+            <div id="result"></div>
             </div>
-          <form>
-            
-          </form>
+            <div id="gameover">
+              <div id="finalScore"></div>
+              <input type="text" size = "35" placeholder="Enter your initials for high score" name="initials" id="initials"/>
+              <button id="submitScore">Submit Score</button>          
         </section>
 
           <section>
             <div class="card results">
-              <div class = "score-container">                          
-              <button class="reset-button" id="Reset-Score">Reset Score</button>
-              <button class="view-Highscores" id= "View-Highscores">View Highscores</button>
-          
-            <div class= "card timer">
+              <div class = "score-container"> 
+                <div id="highscore-header">
+                  <h2>User Initials</h2>
+                  <h2>Score</h2>
+                </div> 
+                <div id= "highscore-initials"></div>
+                <div id= "highscore-score"></div> 
+                </div>   
+              <div id="QuizOverbtns">                    
+              <button id="playAgain" onclick="ResetQuiz()">Take Quiz Again</button>
+              <button id="startHighscore" onclick= "ViewHighscores">View Highscores</button>          
+            <div id="timer">Time left: </div>
             <div class = "timer-text">
             <div class="timer-counter">60</div>
               <h2>seconds remaining</h2>
@@ -58,7 +64,6 @@
           </section>
       </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./script.js"></script>
     <script src="./questions.js"></script>
   </body>
