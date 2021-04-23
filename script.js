@@ -1,14 +1,26 @@
 //Variables
-var timerElement = document.querySelector(".timer-counter");
-var startButtonEl = $('#start')
-var timer;
-var chosenAnswer ="";
-var score;
-var choices = document.querySelector("#choices");
-var checkAnswer = document.querySelector("check-Answer");
+var startButton = document.getElementById("startbtn");
+var quiz = document.getElementById("quiz");
+var questions = document.getElementById("questions");
+var quizTimer = document.getElementById("timer");
+var results = document.getElementById("result");
+var finalScore = document.getElementById("finalScore");
+var quizoverDiv = document.getElementById("Quizover");
+var scoreContainer = document.getElementById("scoreContainer");
+var highscoreDiv = document.getElementById("highscore-Page");
+var highscoreNameInput = document.getElementById("highscore-initials");
+var QuizOverBtns = document.getElementById("QuizOverBtns");
+var submitScoreBtn = document.getElementById(submitScore);
+var highscoreDisplayScore = document.getElementById("highscore-score");
+var buttonA = document.getElementById('A');
+var buttonB = document.getElementById('B');
+var buttonC = document.getElementById('C');
+var buttonD = document.getElementById('D');
+var buttonE = document.getElementById('E');
+var buttonF = document.getElementById('F');
+var buttonG = document.getElementById('G');
 
 
-  start.addEventListener("click", startQuiz)
 
   // The startGame function is called when the start button is clicked
   function startQuiz() {  

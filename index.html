@@ -35,7 +35,7 @@
                 <button id="G" onclick="checkAnswer('G')">G</button>
             <div id="result"></div>
             </div>
-            <div id="gameover">
+            <div id="Quizover">
               <div id="finalScore"></div>
               <input type="text" size = "35" placeholder="Enter your initials for high score" name="initials" id="initials"/>
               <button id="submitScore">Submit Score</button>          
@@ -43,17 +43,19 @@
 
           <section>
             <div class="card results">
-              <div class = "score-container"> 
+              <div id = "score-Container">
+                <div id="highscore-Page"> 
                 <div id="highscore-header">
                   <h2>User Initials</h2>
                   <h2>Score</h2>
                 </div> 
                 <div id= "highscore-initials"></div>
                 <div id= "highscore-score"></div> 
-                </div>   
+              </div>   
               <div id="QuizOverbtns">                    
               <button id="playAgain" onclick="ResetQuiz()">Take Quiz Again</button>
-              <button id="startHighscore" onclick= "ViewHighscores">View Highscores</button>          
+              <button id="startHighscore" onclick= "ViewHighscores">View Highscores</button>
+              </div>          
             <div id="timer">Time left: </div>
             <div class = "timer-text">
             <div class="timer-counter">60</div>
