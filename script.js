@@ -66,13 +66,30 @@ var quizQuestions = [
       correct="ergonomics"},
 ];
 
-  // The startGame function is called when the start button is clicked
+  var lastQuestionIndex = quizQuestions.length;
+  var currentQuestionIndex = 0;
+  var timeLeft = 60;
+  var timerInterval;
+  var score = 0;
+  var correct;
+
+  // The startGame function is called when the start button is clicked; Timer begins; First quiz question appears.
   function startQuiz() {  
-    timerCount = 60;    
-    renderQuestion()
-    startTimer()
-  }
-    
+    startQuizDiv.style.display = "none";
+    quizoverDiv.style.display ="none";
+    generateQuizQuestion();
+  
+
+    //Timer function
+    timerInterval = setInterval(function() {
+      timeLeft--;
+      quizTimer.textContent = "Time left " + timeLeft;
+        if(timeLeft === 0) {
+          clearInterval(timerInterval);
+          showScore();
+        }
+    }, 1000);
+    quiz
   // The GameOver function is called when timer reaches 0
   var timerCount = 60
   // The setTimer function starts and stops the timer and triggers winGame() and loseGame()
