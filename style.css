@@ -5,13 +5,14 @@
   :root{
     --blue:#093145;
   }
+
   body {
     font-family: Arial;
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: flex-start;
+    justify-content: center;
     background: lightslategray;
     }
     
@@ -23,13 +24,36 @@
       display: none;
     }
 
-    #QuizOver {
+    #Quizover {
       text-align: center;
       display: none;
       flex-direction: column;
       align-items: center;
     }
+
+    #highScore {
+      height: 20px;      
+    }
     
+    #initials {
+      margin: 8px;
+      height: 24px;
+    }
+
+    #highscore-initals {
+      display: inline-block;
+      padding-left: 25px;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    #highscore-score {
+      float: right;
+      padding-right: 25px;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
   .play-Again, .start-highscores {
     font-size: 16px;
     height: 30px;
@@ -62,31 +86,35 @@
     justify-content: space-around;
   }
 
-  section {
-    flex: 0 auto;
-    padding: 8px;
-    margin-top: 50px;
-    background-color: #fff;
-    border-radius: 8px;
-  }
 
-  .container {
-    display: block;
-    margin: 80px auto;
-    text-align: center;
-    font-size: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
-    transition: 0.3s;
-    width: 60vw;
-    background-color: lightslategray;
-    padding-top: 20px;
+  .Container {
+    display: flex;
+    width: 100vw;
+    height: 20vw;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    background: lightslategray;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+    margin: auto;
+    padding: 20px;
   }
+  
     
   h1 {
     font-size: 35px;
   }
    
-  #start {
+
+  h2 {
+    line-height: 10px;
+    
+  }
+  #startButton {
     border-radius: 8px;
     border-style: none;
     box-shadow: rgba(34,36,38,.15) 3px 0 0 4px inset;
@@ -94,20 +122,20 @@
     cursor: pointer;
     font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
     font-size: 1em;
-    padding: 20px 52px;
+    position: relative; top: 100px; left: 500px;
     letter-spacing: 0.21px;
-    line-height: 16px;
-    margin-top: 0.6em;
-    max-width: 255px;
-    position: relative;      
+    line-height: 18px;
+    margin: 15px;   
+    width: 22%;
+    justify-content: center;      
     text-align: center;     
   }
   
-  #start {
+  #startButton {
     background-color: #fff;
   }
 
-  #start:hover {
+  #startButton:hover {
     border: 3px solid lightslategray;
     color: lightslategray;
   }
@@ -116,12 +144,24 @@
     position: relative; left: 250px;
   }
 
-  #Reset-Score {
-    position: relative; left: 30px; top: 40px; 
-    margin-top: 20px;
-    padding-bottom: 50px;
-    line-height: 20px;    
+  #highscore-Page {
+    display: none;
+    width: 50%;
+    border: solid;
+    border-color:rgba(60, 64, 67, 0.15);
+    border-bottom-style: groove;
+    padding-bottom: 10px;
+    background:var(--blue);
   }
+  #highscore-header{
+    display:flex;
+    justify-content: space-around;
+    border-bottom-style: outset;
+    margin-bottom: .5rem;
+    background-color: #fff;
+    color: black;
+    font-family: sans-serif;
+}
 
   button {
     border-radius: 8px;
@@ -158,67 +198,42 @@
   }
 
   #question{
-    width:500px;
+    width:50px;
     height : 125px;
     position: absolute;
     right:0;
     top:0;
 }
 
-#question p{
+ p{
     margin : 0;
     padding : 15px;
     font-size: 1.25em;
 }
 
-#choices{
-    width : 480px;
-    position: absolute;
-    right : 0;
-    top : 125px;
-    padding : 10px
-}
-.choice{
-    display: inline-block;
-    width : 135px;
-    text-align: center;
-    border : 1px solid var(--blue);
-    border-radius: 3px;
-    cursor: pointer;
-    padding : 5px;
-}
 
-.choice:hover{
-    border : 2px solid lightslategray;
-    font-weight: bold;
-}
-  
 .results {
   width: 30vw;
   height: 400px;
 }
 
-.card {
-  background: lightslategray;
-  border: 1px solid #eceff1;
-  border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
-  margin: auto;
-  padding: 20px;
-}
 
-.timer {
+#timer {
   height: 200px;
   padding: 50px;
   background: #fff;
   color: var(--blue);
-  text-align: center;
-  position: relative; top: 150px; right: 220px;
+  text-align: center;  
   margin: 0 auto;
   font-size: 25px;
   line-height: 42px;
  
+}
+
+#timer-text {
+  padding: 15px;
+  position: relative; bottom: 30px;
+  line-height: 30px; 
 }
 
 .large-font {
@@ -226,13 +241,6 @@
   text-align:center;
   position: relative; left: 60px;
 }
-
-.timer-text {
-  padding: 15px;
-  position: relative; bottom: 30px;
-  line-height: 30px; 
-}
-
 
 @media screen and (max-width: 1183px) {
   main {
@@ -244,7 +252,7 @@
     width: 90vw;
   }
 
-  section {
+  .Container {
     background-color: white;
     margin: 20px auto;
     width: 92vw;

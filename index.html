@@ -11,15 +11,15 @@
   <body>
     <header>
       <div class="large-font">Science Trivia</div>
-      <button class="start-button" id= "start">Start Quiz</button> 
+      <button id="ViewHighscores" onclick= "ViewHighscores">View Highscores</button>
     </header>
 
-    <main>
-      <section>    
-      <div class="card quiz-question">
+      <div class="Container">
+        <button id="startButton">Start Quiz</button> 
         <h1> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h1>
         <div id="quiz">
-          <div id="questions"></div>              
+          <div id ="timer">Time left: 60</div>
+          <div id="questions"><p>Questions</p></div>              
                 <button id="A" onclick="checkAnswer('A')">A</button>
 
                 <button id="B" onclick="checkAnswer('B')">B</button>
@@ -34,39 +34,24 @@
 
                 <button id="G" onclick="checkAnswer('G')">G</button>
             <div id="result"></div>
-            </div>
-            <div id="Quizover">
-              <div id="finalScore"></div>
+        </div>
+        <div id="Quizover">
+              
+              <div id="finalScore" style = "display: none;">
+                <div id= "score">
+                </div>
               <input type="text" size = "35" placeholder="Enter your initials for high score" name="initials" id="initials"/>
-              <button id="submitScore">Submit Score</button>          
-        </section>
-
-          <section>
-            <div class="card results">
-              <div id = "score-Container">
-                <div id="highscore-Page"> 
-                <div id="highscore-header">
-                  <h2>User Initials</h2>
-                  <h2>Score</h2>
-                </div> 
-                <div id= "highscore-initials"></div>
-                <div id= "highscore-score"></div> 
-              </div>   
-              <div id="QuizOverbtns">                    
-              <button id="playAgain" onclick="ResetQuiz()">Take Quiz Again</button>
-              <button id="startHighscore" onclick= "ViewHighscores">View Highscores</button>
+              <button id="submitScore">Submit Score</button> 
+                                  
+              <button id="playAgain" onclick="ReplayQuiz()">Take Quiz Again</button>
               </div>          
-            <div id="timer">Time left: </div>
-            <div class = "timer-text">
-            <div class="timer-counter">60</div>
-              <h2>seconds remaining</h2>
-            </div> 
-            </div>
-            </div> 
-          </section>
-      </main>
-
-    <script src="./script.js"></script>
-    <script src="./questions.js"></script>
+        </div>
+            
+            <div id="highscore-Page" style = "display: none;"> 
+                 <div id= "highscore-initials"></div>
+                <div id= "highscore"></div> 
+              </div>                   
+           
+    <script src="script.js"></script>
   </body>
 </html>
