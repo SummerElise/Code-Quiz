@@ -9,12 +9,12 @@
   </head>
   
   <body>
-    <div class="Container">
+    <div id="Container">
       <div class="large-font">Science Trivia</div>
       <button id="ViewHighscores" onclick= "ViewHighscores">View Highscores</button>   
-        <button id="startButton">Start Quiz</button> 
+        <button id="start" onclick="start">Start Quiz</button> 
         <h1> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h1>
-        <div id="quiz" style = "display: none">
+        <div id="quiz">
           <div id="questions"></div>  
           <div id="choices">           
                 <div class="choice" id="A" onclick="checkAnswer('A')"></div>
@@ -24,6 +24,7 @@
                 <div class="choice" id="E" onclick="checkAnswer('E')"></div>
                 <div class="choice" id="F" onclick="checkAnswer('F')"></div>
                 <div class="choice" id="G" onclick="checkAnswer('G')"></div>              
+           </div>
            </div>
         <div id="timer">
         <div id="counter"></div>

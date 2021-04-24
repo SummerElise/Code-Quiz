@@ -1,26 +1,19 @@
 //Variables
-var startButton = document.getElementById("startButton");
-var quiz = document.getElementById("quiz");
-var questions = document.getElementById("questions");
-var buttonA = document.getElementById('A');
-var buttonB = document.getElementById('B');
-var buttonC = document.getElementById('C');
-var timer = document.getElementById("timer");
-var results = document.getElementById("result");
-var ViewHighscores = document.getElementById("ViewHighscores")
-var finalScore = document.getElementById("finalScore");
-var QuizoverDiv = document.getElementById("Quizover");
-var scoreContainer = document.getElementById("scoreContainer");
-var highscorePage = document.getElementById("highscore-Page");
-var NameInput = document.getElementById("initials");
-var submitScoreBtn = document.getElementById("submitScore");
-var highscore = document.getElementById("highscore");
-var text = document.getElementById("text");
+const start = document.getElementById("start");
+const quiz = document.getElementById("quiz");
+const questions = document.getElementById("questions");
+const choiceA = document.getElementById('A');
+const choiceB = document.getElementById('B');
+const choiceC = document.getElementById('C');
+const counter = document.getElementById("counter");
+const timeGauge = document.getElementById("timeGauge");
+const scoreDiv = document.getElementById("scoreContainer");
+
 
 
 
 //Questions with answers
-var questions =
+let question =
   [{
       question : "How many bones are in the human body?",
       choiceA : "166",
@@ -72,97 +65,72 @@ var questions =
     }
 ];
 
-  var currentQuestionIndex = 0;
+  const lastQuestion = questions.length - 1;
+  let runningQuestion = 0;
+  let count = 0;
+  const timer = 60;
+  const gaugeWidth = 150;
+  const gaugeUnit = gaugeWidth / timer;
+  let TIMER;
+  let score = 0;
+
+  
+  function renderQuestion(){
+    let q = question[runningQuestion];
+
+    questions.innerHTML = "<p>"+ q.question +"</p>";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+
+  }
+
+  start.addEventListener("click", start);
 
    // The startQuiz function is called when the start button is clicked
-   function startButton() {  
-    ViewHighscores.style.display = "none"
-    finalScore.style.display = "none"
-    NameInput.style.display = "none"
-    showQuestions()
-    quiz.style.display = "block"
-    countdown()
+   function start() {  
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    renderCounter();
+    TIMER = setInterval(renderCounter,1000);
   }
 
 
-  function ViewHighscores(){
-    highscorePage.style.display = "block"
-    startButton.style.display = "none"
-    QuizoverDiv.style.display = "none";
-    scoreContainer.style.display = "flex";
-    highscorePage.style.display = "block";
-}
-  
-
-  function showQuestion(){
-      Container.textContent = "";
-      results.textContent = "";
-      var currentQuestion = questions[currentQuestionIndex];
-      header.textContent = currentQuestion.title;
-      score.textContent = currentHighscore;
-      timer.textContent = timeLeft;
-    
-      for (var i = 0; i < currentQuestion.choices.length; i++) {
-        var choiceButton = document.createElement("button");
-    buttonA.innerHTML = currentQuestion.choiceA;
-    buttonB.innerHTML = currentQuestion.choiceB;
-    buttonC.innerHTML = currentQuestion.choiceC;   
-  };
-
-  
-
-    //Timer function
-    function setTimer(){
-    timerInterval = setInterval(function() {
-      timeLeft--;
-      quizTimer.textContent = "Time left: " + timeLeft;
-        if(timeLeft === 0) {
-          clearInterval(timerInterval);
-          showScore();
-        }
-    }, 1000);
-    startButton.addEventListener('click', setTimer);
-  
-
-    var
-
-  // Screen at the end of the quiz that displays the score
-  function showScore() {
-  quizBody.style.display ="none";
-  QuizoverDiv.style.display = "flex";
-  clearInterval(timerInterval);
-  highscoreNameInput.value = "";
-  finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct!";
-  }
-
-  submitScoreBtn.addEventListener("click", function highscore(){
-
-    if(highscoreNameInput.value === "") {
-      alert("Text box cannot be blank");
-      return false;
+  function renderCounter(){
+    if(count <= timer){
+      counter.innerHTMl = count;
+      timeGauge.style.width = count * gaugeUnit + "px";
+      count++
     }else{
-      var savedHighscore = JSON.parse(localStorage.getItem("savedHighscore")) || [];
-      var currentUser = highscoreNameInput.value.trim();
-      var currentHighscore = {
-        name : currentUser,
-        score : score
-      };
-
-      quizoverDiv.style.display = "none";
-      scoreContainer.style.display = "flex";
-      highscoreDiv.style.display = "block";
-      QuizOverBtns.style.display ="flex";
-      savedHighscore.push(currentHighscore);
-      localStorage.setItem("savedHighscore", JSON.stringify(savedHighscore));
-      generateHighscore();
-
+      clearInterval(TIMER);
+      scoreRender();
     }
-  });
+  }
+
+  function checkAnswer(answer){
+    if( answer == questions[runningQuestion].correct){
+      score++;    
+  }else{
+    score--;
+  }
+  count = 0;
+  if(runningQuestion < lastQuestion){
+    runningQuestion++;
+    renderQuestion();
+  }else{
+    clearInterval(TIMER);
+    scoreRender();
+  }
+}
+
+function scoreRender(){
+  scoreDiv.style.display = "block";
 
 
-  startButton.addEventListener("click", function(){
-    Container.textContent = "";
-    showQuestion();
-    startTimer();
-  });
+}
 
+
+  
+
+    
