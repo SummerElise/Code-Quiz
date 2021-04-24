@@ -16,19 +16,14 @@
     background: lightslategray;
     }
     
-    #quiz {
-      display: none;
-    }
+    
+
+   #timer {
+     display: block;
+   }
 
     #result {
       display: none;
-    }
-
-    #Quizover {
-      text-align: center;
-      display: none;
-      flex-direction: column;
-      align-items: center;
     }
 
     #highScore {
@@ -40,32 +35,28 @@
       height: 24px;
     }
 
-    #highscore-initals {
+    #highscore-initals{
       display: inline-block;
       padding-left: 25px;
       font-family: sans-serif;
       font-weight: bold;
     }
 
-    #highscore-score {
+    #highscore{
       float: right;
       padding-right: 25px;
       font-family: sans-serif;
       font-weight: bold;
     }
 
-  .play-Again, .start-highscores {
+  #play-Again, #ViewHighscores {
     font-size: 16px;
     height: 30px;
     line-height: 8px;
     margin-top: 20px;
   }
   
-  .score-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16px;
-  }
+
   
   html {
     font-size: 18px;
@@ -145,7 +136,7 @@
   }
 
   #highscore-Page {
-    display: none;
+  
     width: 50%;
     border: solid;
     border-color:rgba(60, 64, 67, 0.15);

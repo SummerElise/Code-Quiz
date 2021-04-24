@@ -9,45 +9,35 @@
   </head>
   
   <body>
-    <header>
+    <div class="Container">
       <div class="large-font">Science Trivia</div>
-      <button id="ViewHighscores" onclick= "ViewHighscores">View Highscores</button>
-    </header>
-
-      <div class="Container">
+      <button id="ViewHighscores" onclick= "ViewHighscores">View Highscores</button>   
         <button id="startButton">Start Quiz</button> 
         <h1> Try your hand at this Science trivia quiz. Answer the questions within the time limit given. Incorrect answers will penalize your scoretime by 10 seconds!</h1>
-        <div id="quiz">
-          <div id ="timer">Time left: 60</div>
-          <div id="questions"><p>Questions</p></div>              
-                <button id="A" onclick="checkAnswer('A')">A</button>
-
-                <button id="B" onclick="checkAnswer('B')">B</button>
-
-                <button id="C" onclick="checkAnswer('C')">C</button>
-
-                <button id="D" onclick="checkAnswer('D')">D</button>
-
-                <button id="E" onclick="checkAnswer('E')">E</button>
-
-                <button id="F" onclick="checkAnswer('F')">F</button>
-
-                <button id="G" onclick="checkAnswer('G')">G</button>
-            <div id="result"></div>
+        <div id="quiz" style = "display: none">
+          <div id="questions"></div>  
+          <div id="choices">           
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+                <div class="choice" id="E" onclick="checkAnswer('E')"></div>
+                <div class="choice" id="F" onclick="checkAnswer('F')"></div>
+                <div class="choice" id="G" onclick="checkAnswer('G')"></div>              
+           </div>
+        <div id="timer">
+        <div id="counter"></div>
+        <div id="timeGauge"></div>
         </div>
-        <div id="Quizover">
               
-              <div id="finalScore" style = "display: none;">
-                <div id= "score">
-                </div>
+              <div id="scoreContainer" style = "display: none">          
               <input type="text" size = "35" placeholder="Enter your initials for high score" name="initials" id="initials"/>
-              <button id="submitScore">Submit Score</button> 
-                                  
+              <button id="submitScore">Submit Score</button>                                  
               <button id="playAgain" onclick="ReplayQuiz()">Take Quiz Again</button>
               </div>          
-        </div>
+    </div>
             
-            <div id="highscore-Page" style = "display: none;"> 
+            <div id="highscore-Page" style = "display: none"> 
                  <div id= "highscore-initials"></div>
                 <div id= "highscore"></div> 
               </div>                   
