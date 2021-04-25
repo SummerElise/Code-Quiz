@@ -24,4 +24,4 @@ THEN I can save my initials and my score
 
 You can find the live website here: https://SummerElise.github.io/Code-Quiz/
 
-An example of the layout of my quiz is pictured below:
+An example of what the functionality should be like is shown below:
