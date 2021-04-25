@@ -25,21 +25,25 @@
            </div>
 
 
-           <div id= "endScore" style = "display: none;"> 
-              <div id="score"></div>
-                <form>   
+           <div id= "endScore"  style = "display: none;"> 
+             <h2>QUIZ OVER</h2>
+              <div id="scoreResults"></div>
+                <form>  
+                  <div id="scoreSubmission"> 
               <label for="users" id="name">Please submit your initials:</label> 
-              <input type = "button" id = "userInfo" class = "submitButton" onclick="HS"; value="Submit"/>
-              </form>                               
-             </div>
+              <input type="text" id="scoreInfo"/>
+              <input type = "button" id = "userInfo" class = "submitButton" value="submit"><a href="#highscorePage"></a> 
+                </div>                               
+            </form>
+            </div>
             
-            <div id="highscore-Page" style = "display: none"> 
+            <a id="highscore-Page" style = "display: none"> 
                   <div id="bestScore"></div>
                  <div id= "highscore-Initials"></div>
               </div>     
               
               <footer>
-                <button id="HS" onclick = "HS">View Highscores</button> <div id="timer">Timer left: 60</div>
+                <button id="HS"><a href="#highscorePage"></a>View Highscores</button> <div id="timer">Timer left: 60</div>
               </footer>
            
     <script src="script.js"></script>

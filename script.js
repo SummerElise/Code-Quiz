@@ -1,4 +1,4 @@
-//Variables
+//constants
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
@@ -6,14 +6,14 @@ const choices = document.getElementById("choices");
 const choice1 = document.getElementById('1');
 const choice2 = document.getElementById('2');
 const choice3 = document.getElementById('3');
-const scoreDiv = document.getElementById("scoreContainer");
-const score = document.getElementById("score");
+const scoreResults = document.getElementById("scoreResults");
 const highscorePage = document.getElementById("highscorePage");
-const bestScore = document.getElementById("bestScore");
-const highscoreInitials = document.getElementById("highscoreInitials");
+const endScore = document.getElementById("endScore");
 const submitScore = document.getElementById("submitScore");
 const text = document.getElementById("text");
 const quizBody = document.getElementById("quizBody");
+const scoreSubmission = document.getElementById("scoreSubmission");
+
 
 
 //Questions with answers
@@ -69,6 +69,8 @@ var questions =
     }
 ];
 
+
+
 start.addEventListener("click", startQuiz);
 HS.addEventListener("click", HS);
 
@@ -86,15 +88,14 @@ timer.textContent = "Time: " + startScore;
   quiz.style.display = "block"
   question.style.display = "block"
   
-  
+  //Timer begins countdown when 'start' button is clicked
  var timeInterval = setInterval(function() {
   timer.textContent = "Time: " + counter;
       counter-=1;
-    if (counter === 0 || questions.length === runningQuestionIndex+1) {
-      //not sure
-      scoreRender();
+    if (counter === 0 || questions.length === runningQuestionIndex+1) {      
+      scoreResultsRender();
      clearInterval(timeInterval);
-     timer.textContent = "Time:" + counter;
+     timer.textContent = "Time: " + counter;
     }
   }, 1000);
 
@@ -102,8 +103,9 @@ timer.textContent = "Time: " + startScore;
 };
 
   var lastQuestionIndex = questions.length -1;
-  var runningQuestionIndex = 0
+  var runningQuestionIndex = 0;
 
+  // Shows questions individually
   function showQuestions(){      
     let q = questions[runningQuestionIndex];
     question.innerHTML =  q.question;
@@ -113,53 +115,56 @@ timer.textContent = "Time: " + startScore;
   };
 
    
-  
+  //Notifies user if chossen answer is Correct or Wrong
   function checkAnswer(answer){
     if(questions[runningQuestionIndex].correct == answer){
-      answerOutput.textContent = "Correct!"
-         
+      answerOutput.textContent = "Correct!"           
   }
   else{
     answerOutput.textContent = "Wrong!"
     counter -=10;
   }
+
   if (questions.length === runningQuestionIndex+1) {
-    scoreRender();
+    scoreResultsRender();
     return;
   }
   runningQuestionIndex++;
   showQuestions();
 };
 
-function scoreRender() {
-  score.style.display = "block";
+//End score
+function scoreResultsRender() {
   quizBody.style.display = "none";
   quiz.style.display = "none";
+  endScore.style.display = "block";
 
   if (counter === 0 || questions.length -1) {
-    score.textContent = "Your score is " + counter + ".";
+    scoreResults.textContent = "Your score is " + counter + ".";
   }
 };
 
-  
-var endScore = {
-  userInfo: 'summer',
-  counter: '30'
-}
+//Submission of initials with final score
+userInfo.addEventListener("click", function() {
+  var scoreInfo = document.getElementById("scoreInfo").value;
 
-var endScore = [];
+  localStorage.setItem("scoreInfo", JSON.stringify (scoreInfo));
+  localStorage.setItem("counter", JSON.stringify(counter));
 
-var loadScores = function() {
-  var endScore = localStorage.getItem("userInfo, counter");
+  loadScores();
+});
 
-  if (!endScore) {
-    return false;
-  }
+  var loadScores = function() {
+    var endScore = localStorage.getItem("scoreInfo, counter");
 
-  for (var i = 0; i < endScore.length; i++) {
-    var endScore = endScore[i];
-    var listItemel = document.createElement('li');
-    listItemel.textContent = endScore;
-  }
-  endScore.push(endScore)
-};
+    if (!endScore) {
+      return false;
+    }
+
+    for (var i=0; i < endScore.length; i++) {
+      var endScore = endScore[i];
+      var listItemEl = document.createElement("li");
+      listItemEl.textContent = endScore;
+    }
+    endScore.push(endScore)
+  };
