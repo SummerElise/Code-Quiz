@@ -14,6 +14,10 @@
   padding: 12vh;
 }
 
+#question {
+  font-size: 25px;
+  font-weight: bold;
+}
 .button{
   font-size: 16px;
   background-color: lightslategray;
@@ -47,6 +51,7 @@ h1{
 .large-font{
   text-align: center;
   font-size: 50px;
+  line-height: 135px;
 }
 
 #questions {
@@ -70,24 +75,16 @@ h1{
   right: 0;
   top: 125px;
   padding: 10px;
-  
-}
-
-.choice  {
-  display: flex;
-  width: 155px;
-  height: 50px;
-  text-align: row;
+  display: inline;
+  width: auto;
+  height: auto;
+  text-align: center;
   color: black; 
   border-radius: 5px;
-  cursor: pointer;
-  padding: 5px;
+  cursor: pointer;  
 }
 
-.choice:hover{
-  border: 2px solid grey;
-  font-weight: bold;
-}
+
 
 #timer {
   position: absolute;
@@ -110,9 +107,18 @@ footer {
 }
 
 #start {
-  position: relative
-  display: flex;
+  width: 200px;
+  height: 50px;
+  position: relative;
   flex-direction: row;
   justify-content: center;
   color: black;
+  background-color: lightslategrey;
+  cursor: pointer;
+}
+
+#start:hover {
+  transition-duration: 0.4s;
+  background-color: black;
+  color: lightslategray;
 }
