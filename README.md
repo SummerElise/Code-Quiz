@@ -22,6 +22,7 @@ WHEN the game is over
 THEN I can save my initials and my score
 
 
+An example of what the functionality should be like is shown below:
+
 You can find the live website here: https://SummerElise.github.io/Code-Quiz/
 
-An example of what the functionality should be like is shown below:
