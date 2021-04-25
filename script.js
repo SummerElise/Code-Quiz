@@ -154,6 +154,11 @@ userInfo.addEventListener("click", function() {
   loadScores();
 });
 
+  var playAgainBtn = document.getElementById("replay");
+  playAgainBtn.addEventListener("click", function() {
+    localStorage.replay();
+  })
+
   var loadScores = function() {
     var endScore = localStorage.getItem("scoreInfo, counter");
 
