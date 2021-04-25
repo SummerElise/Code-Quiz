@@ -25,3 +25,4 @@ THEN I can save my initials and my score
 You can find the live website here: https://SummerElise.github.io/Code-Quiz/
 
 An example of the layout of my quiz is pictured below:
+![04-web-apis-homework-demo](https://user-images.githubusercontent.com/80479850/115980327-f837a200-a559-11eb-8197-db417b20224a.gif)
