@@ -32,21 +32,13 @@
                   <div id="scoreSubmission"> 
               <label for="users" id="name">Please submit your initials:</label> 
               <input type="text" id="scoreInfo"/>
-              <input type = "button" id = "userInfo" class = "submitButton" value="submit"><a href="#highscorePage"></a> 
+              <input type = "button" id = "userInfo" onclick ="location.href='highscores.html';" value="submit"/>
                 </div>                               
             </form>
-            </div>
-            
-            <a id="highscore-Page" style = "display: none">
-              <div class = scoreList>
-                <h3>SCORES</h3> 
-                </div>
-                  <div class="playAgainBtn">
-                    <button id="replay" class="btn" type="submit">Play Again</button>
-                  </div>     
-              
+            </div>            
+                     
               <footer>
-                <button id="HS"><a href="#highscorePage"></a>View Highscores</button> <div id="timer">Timer left: 60</div>
+                <a id="Scores" href="highscores.html">View Highscores</a> <div id="timer">Timer left: 60</div>
               </footer>
            
     <script src="script.js"></script>

@@ -72,7 +72,7 @@ var questions =
 
 
 start.addEventListener("click", startQuiz);
-HS.addEventListener("click", HS);
+Scores.addEventListener("click", Scores);
 
 var counter = 60;
 var timer = document.getElementById("timer");
@@ -83,7 +83,7 @@ timer.textContent = "Time: " + startScore;
  // The startQuiz function is called when the start button is clicked
  function startQuiz() {  
   start.style.display = "none"
-  HS.style.display = "none"
+  Scores.style.display = "none"
   quizBody.style.display = "none"
   quiz.style.display = "block"
   question.style.display = "block"
@@ -154,22 +154,4 @@ userInfo.addEventListener("click", function() {
   loadScores();
 });
 
-  var playAgainBtn = document.getElementById("replay");
-  playAgainBtn.addEventListener("click", function() {
-    localStorage.replay();
-  })
-
-  var loadScores = function() {
-    var endScore = localStorage.getItem("scoreInfo, counter");
-
-    if (!endScore) {
-      return false;
-    }
-
-    for (var i=0; i < endScore.length; i++) {
-      var endScore = endScore[i];
-      var listItemEl = document.createElement("li");
-      listItemEl.textContent = endScore;
-    }
-    endScore.push(endScore)
-  };
+ 
