@@ -115,7 +115,7 @@ timer.textContent = "Time: " + startScore;
   };
 
    
-  //Notifies user if chossen answer is Correct or Wrong
+  //Notifies user if chosen answer is Correct or Wrong
   function checkAnswer(answer){
     if(questions[runningQuestionIndex].correct == answer){
       answerOutput.textContent = "Correct!"           

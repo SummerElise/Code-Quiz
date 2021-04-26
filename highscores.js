@@ -5,10 +5,6 @@ playAgainBtn.addEventListener("click", function() {
   localStorage.replay();
 })
 
-var endScore = {
-    scoreInfo: 'Summer',
-    counter: '17'
-}
  var endScore = [];
 
 var loadScores = function() {
