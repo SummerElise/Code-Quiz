@@ -1,6 +1,6 @@
 # CODE QUIZ
 This week's assignment required me to create a quiz with Web API's with
-functionality similar to the mock-up that was provided. HTML, CSS, and Javascript were used in this assignment. The following requirements arae to be met based off the given scenario:
+functionality similar to the mock-up that was provided. HTML, CSS, and Javascript were used in this assignment. The following requirements are to be met based off the given scenario:
 
 ## User Story
 ```bash
