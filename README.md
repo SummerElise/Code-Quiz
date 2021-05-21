@@ -35,8 +35,8 @@ You can find the live website here: https://SummerElise.github.io/Code-Quiz/
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
-###### Contact Me
+##### Contact Me
 I can be contacted by email at selise919@gmail.com
 
-##### License
+###### License
 [MIT](https://choosealicense.com/licenses/mit/)
