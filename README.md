@@ -1,7 +1,6 @@
 # CODE QUIZ
 This week's assignment required me to create a quiz with Web API's with
-functionality similar to the mock-up that was provided. 
-The following requirements arae to be met based off the given scenario:
+functionality similar to the mock-up that was provided. HTML, CSS, and Javascript were used in this assignment. The following requirements arae to be met based off the given scenario:
 
 ## User Story
 ```bash
@@ -11,7 +10,7 @@ The following requirements arae to be met based off the given scenario:
 ```
 
 
-## Acceptance Criteria
+### Acceptance Criteria
 ```python
 GIVEN I am taking a code quiz
 WHEN I click the start button
@@ -32,10 +31,10 @@ You can find the live website here: https://SummerElise.github.io/Code-Quiz/
 
 ![04-web-apis-homework-demo](https://user-images.githubusercontent.com/80479850/115980327-f837a200-a559-11eb-8197-db417b20224a.gif)
 
-## Contributing
+#### Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 
-## License
+##### License
 [MIT](https://choosealicense.com/licenses/mit/)
